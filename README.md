@@ -1,6 +1,6 @@
 ![](assets/logo.png)
 
-Object-Iterator is a node.js module which helps you avoid errors while accessing json from the big bad internet (and your own apis)
+ReIterator is a node.js module which helps you avoid errors while accessing json from the big bad internet (and your own apis)
 
 ## About
 
@@ -8,8 +8,12 @@ I created this package to simplify iterating across arrays and objects without h
 
 ## Quick Start
 
+```bash
+yarn install reiterator
+```
+
 ```js
-const i = require('object-iterator')
+const i = require('reiterator')
 const value = i.Iterator({'key': 'abc'})
 console.log(value)
 ```

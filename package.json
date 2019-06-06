@@ -1,8 +1,8 @@
 {
-    "name": "object-iterator",
+    "name": "reiterator",
     "version": "1.0.0",
     "main": "index.js",
-    "repository": "git@github.com:sudhanshuraheja/object-iterator.git",
+    "repository": "git@github.com:sudhanshuraheja/reiterator.git",
     "author": "Sudhanshu Raheja <sudhanshu@leftshift.io>",
     "license": "MIT",
     "keywords": [
