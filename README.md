@@ -2,6 +2,14 @@
 
 ReIterator is a node.js module which helps you avoid errors while accessing json from the big bad internet (and your own apis)
 
+![](https://img.shields.io/travis/sudhanshuraheja/reiterator.svg)
+![](https://img.shields.io/codecov/c/github/sudhanshuraheja/reiterator/master.svg)
+![](https://img.shields.io/npm/dy/reiterator.svg)
+![](https://img.shields.io/github/license/sudhanshuraheja/reiterator.svg)
+![](https://img.shields.io/npm/v/reiterator.svg)
+![](https://img.shields.io/node/v/reiterator.svg)
+![](https://img.shields.io/github/commit-activity/y/sudhanshuraheja/reiterator.svg)
+
 ## About
 
 I created this package to simplify iterating across arrays and objects without hitting into errors. The Iterator is chainable, making it possible to access items as `i.$('first').$(0).$('second).value()`
