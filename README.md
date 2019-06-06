@@ -4,11 +4,7 @@ ReIterator is a node.js module which helps you avoid errors while accessing json
 
 ![](https://img.shields.io/travis/sudhanshuraheja/reiterator.svg)
 ![](https://img.shields.io/codecov/c/github/sudhanshuraheja/reiterator/master.svg)
-![](https://img.shields.io/npm/dy/reiterator.svg)
 ![](https://img.shields.io/github/license/sudhanshuraheja/reiterator.svg)
-![](https://img.shields.io/npm/v/reiterator.svg)
-![](https://img.shields.io/node/v/reiterator.svg)
-![](https://img.shields.io/github/commit-activity/y/sudhanshuraheja/reiterator.svg)
 
 ## About
 
