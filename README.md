@@ -13,7 +13,7 @@ I created this package to simplify iterating across arrays and objects without h
 ## Quick Start
 
 ```bash
-yarn install reiterator
+yarn add reiterator
 ```
 
 ```js
@@ -56,9 +56,9 @@ What makes it easy is that
 The package support the following functions on objects
 
 ```js
-const array = i.objects.isArray([123]);
-const object = i.objects.isObject({ key: "abc" });
-const number = i.objects.isNumber(123);
-const string = i.objects.isString("asdf");
-const hasKey = i.objects.hasKey({ abc: "def" }, "abc");
+const array = Iterator.isArray([123]);
+const object = Iterator.isObject({ key: "abc" });
+const number = Iterator.isNumber(123);
+const string = Iterator.isString("asdf");
+const hasKey = Iterator.hasKey({ abc: "def" }, "abc");
 ```
