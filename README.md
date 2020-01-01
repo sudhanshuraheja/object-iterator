@@ -17,8 +17,9 @@ yarn add reiterator
 ```
 
 ```js
-const i = require("reiterator");
-const value = i.Iterator({ key: "abc" });
+const Iterator = require("reiterator");
+const i = new Iterator({ key: "abc" });
+const value = i.$("key").value();
 console.log(value);
 ```
 
@@ -34,7 +35,7 @@ The package supports the following functions on the iterator
 const obj = { abc: [1, 2, 3, 4, 5], def: { ghi: "jkl", mno: 10 } };
 i = new Iterator(obj);
 i.$("abc").keys(); // [1,2,3,4,5]
-i.$("def").keys(); // []
+i.$("def").keys(); // ['ghi', 'mno']
 i.$("def")
   .$("ghi")
   .string(); // 'jkl'
