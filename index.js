@@ -1,7 +1,7 @@
-const objects = require('./objects')
-const Iterator = require('./iterator')
+const objects = require("./objects");
+const Iterator = require("./iterator");
 
 module.exports = {
-    objects,
-    Iterator
-}
+  objects,
+  Iterator
+};

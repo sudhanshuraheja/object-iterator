@@ -1,9 +1,15 @@
 {
-    "env": {
-      "node": true
-    },
-    "extends": ["airbnb-base", "plugin:jest/recommended", "prettier"],
-    "parser": "babel-eslint",
-    "rules": {},
-    "plugins": ["jest"]
+  "extends": ["airbnb", "prettier", "plugin:jest/recommended"],
+  "plugins": ["prettier", "jest"],
+  "rules": {
+    "prettier/prettier": ["error"],
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error"
+  },
+  "env": {
+    "jest/globals": true
   }
+}
