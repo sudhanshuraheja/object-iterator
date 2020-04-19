@@ -33,6 +33,16 @@ class Iterator {
     return this.obj;
   }
 
+  length() {
+    if (Iterator.isArray(this.obj)) {
+      return this.obj.length;
+    }
+    if (Iterator.isObject(this.obj)) {
+      return this.keys().length;
+    }
+    return 0;
+  }
+
   static isArray(obj) {
     return Array.isArray(obj);
   }

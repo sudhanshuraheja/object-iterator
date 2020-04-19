@@ -4,12 +4,14 @@ describe("Test Iterator", () => {
   test("test Iterator", () => {
     let i = new Iterator(undefined);
     expect(i.value()).toBe(undefined);
+    expect(i.length()).toBe(0);
     i = new Iterator(undefined);
     expect(i.keys()).toEqual([]);
     i = new Iterator(undefined);
     expect(i.string()).toBe("");
     i = new Iterator(undefined);
     expect(i.$("key").value()).toBe(undefined);
+    expect(i.$("key").length()).toBe(0);
     i = new Iterator(undefined);
     expect(i.$("key", true)).toBe(undefined);
     i = new Iterator(undefined);
@@ -19,12 +21,14 @@ describe("Test Iterator", () => {
 
     i = new Iterator(null);
     expect(i.value()).toBe(null);
+    expect(i.length()).toBe(0);
     i = new Iterator(null);
     expect(i.keys()).toEqual([]);
     i = new Iterator(null);
     expect(i.string()).toBe("");
     i = new Iterator(null);
     expect(i.$("key").value()).toBe(undefined);
+    expect(i.$("key").length()).toBe(0);
     i = new Iterator(null);
     expect(i.$("key", true)).toBe(undefined);
     i = new Iterator(null);
@@ -34,12 +38,14 @@ describe("Test Iterator", () => {
 
     i = new Iterator(123);
     expect(i.value()).toBe(123);
+    expect(i.length()).toBe(0);
     i = new Iterator(123);
     expect(i.keys()).toEqual([]);
     i = new Iterator(123);
     expect(i.string()).toBe("");
     i = new Iterator(123);
     expect(i.$("key").value()).toBe(undefined);
+    expect(i.$("key").length()).toBe(0);
     i = new Iterator(123);
     expect(i.$("key", true)).toBe(undefined);
     i = new Iterator(123);
@@ -49,12 +55,14 @@ describe("Test Iterator", () => {
 
     i = new Iterator("abc");
     expect(i.value()).toBe("abc");
+    expect(i.length()).toBe(0);
     i = new Iterator("abc");
     expect(i.keys()).toEqual([]);
     i = new Iterator("abc");
     expect(i.string()).toBe("abc");
     i = new Iterator("abc");
     expect(i.$("key").value()).toBe(undefined);
+    expect(i.$("key").length()).toBe(0);
     i = new Iterator("abc");
     expect(i.$("key", true)).toBe(undefined);
     i = new Iterator("abc");
@@ -64,12 +72,14 @@ describe("Test Iterator", () => {
 
     i = new Iterator(["abc"]);
     expect(i.value()).toEqual(["abc"]);
+    expect(i.length()).toBe(1);
     i = new Iterator(["abc"]);
     expect(i.keys()).toEqual(["abc"]);
     i = new Iterator(["abc"]);
     expect(i.string()).toBe("");
     i = new Iterator(["abc"]);
     expect(i.$("key").value()).toBe(undefined);
+    expect(i.$("key").length()).toBe(0);
     i = new Iterator(["abc"]);
     expect(i.$("key", true)).toBe(undefined);
     i = new Iterator(["abc"]);
@@ -79,12 +89,14 @@ describe("Test Iterator", () => {
 
     i = new Iterator({ key: "abc" });
     expect(i.value()).toEqual({ key: "abc" });
+    expect(i.length()).toBe(1);
     i = new Iterator({ key: "abc" });
     expect(i.keys()).toEqual(["key"]);
     i = new Iterator({ key: "abc" });
     expect(i.string()).toBe("");
     i = new Iterator({ key: "abc" });
     expect(i.$("key").value()).toBe("abc");
+    expect(i.$("key").length()).toBe(0);
     i = new Iterator({ key: "abc" });
     expect(i.$("key", true)).toBe("abc");
     i = new Iterator({ key: "abc" });
