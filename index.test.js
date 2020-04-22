@@ -103,6 +103,44 @@ describe("Test Iterator", () => {
     expect(i.$("key").keys()).toEqual([]);
     i = new Iterator({ key: "abc" });
     expect(i.$("key").string()).toBe("abc");
+
+    const json = {
+      name: { firstName: "Jack", lastName: "Reaper" },
+      city: "Jakarta",
+      runs: [
+        { run1: { date: "26 March 2020", distance: "5km" } },
+        { run2: { date: "20 March 2020", distance: "5km" } },
+      ],
+      active: true,
+      waiting: null,
+      countries: undefined,
+    };
+    expect(Iterator.$$(json)._("name")._("firstName").string()).toBe("Jack");
+
+    expect(
+      Iterator.$$(json)._("runs")._(0)._("run1")._("distance").string()
+    ).toBe("5km");
+
+    expect(Iterator.$$(json)._("runs").keys()).toStrictEqual(["run1", "run2"]);
+
+    // eslint-disable-next-line no-underscore-dangle
+    expect(Iterator._keys(json.runs)).toStrictEqual(["run1", "run2"]);
+    // eslint-disable-next-line no-underscore-dangle
+    expect(Iterator._str(json.name.firstName)).toBe("Jack");
+    // eslint-disable-next-line no-underscore-dangle
+    expect(Iterator._len(json.runs)).toBe(2);
+
+    expect(Iterator.isBoolean(json.active)).toBe(true);
+    expect(Iterator.isBoolean(json.waiting)).toBe(false);
+    expect(Iterator.isBoolean(json.countries)).toBe(false);
+
+    expect(Iterator.isNull(json.active)).toBe(false);
+    expect(Iterator.isNull(json.waiting)).toBe(true);
+    expect(Iterator.isNull(json.countries)).toBe(false);
+
+    expect(Iterator.isUndefined(json.active)).toBe(false);
+    expect(Iterator.isUndefined(json.waiting)).toBe(false);
+    expect(Iterator.isUndefined(json.countries)).toBe(true);
   });
 });
 

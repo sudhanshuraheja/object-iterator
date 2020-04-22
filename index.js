@@ -15,8 +15,25 @@ class Iterator {
     return returnValue ? object.value() : object;
   }
 
+  _(key, returnValue = false) {
+    return this.$(key, returnValue);
+  }
+
+  static $$(obj) {
+    const i = new Iterator(obj);
+    return i;
+  }
+
   keys() {
     if (Iterator.isArray(this.obj)) {
+      if (this.obj.length > 0 && Iterator.isObject(this.obj[0])) {
+        const keys = [];
+        for (let i = 0; i < this.obj.length; i += 1) {
+          const item = this.obj[i];
+          keys.push(...Object.keys(item));
+        }
+        return keys;
+      }
       return this.obj;
     }
     if (Iterator.isObject(this.obj)) {
@@ -25,8 +42,20 @@ class Iterator {
     return [];
   }
 
+  // eslint-disable-next-line no-underscore-dangle
+  static _keys(obj) {
+    const i = new Iterator(obj);
+    return i.keys();
+  }
+
   string() {
     return Iterator.isString(this.obj) ? this.obj.toString() : "";
+  }
+
+  // eslint-disable-next-line no-underscore-dangle
+  static _str(obj) {
+    const i = new Iterator(obj);
+    return i.string();
   }
 
   value() {
@@ -41,6 +70,12 @@ class Iterator {
       return this.keys().length;
     }
     return 0;
+  }
+
+  // eslint-disable-next-line no-underscore-dangle
+  static _len(obj) {
+    const i = new Iterator(obj);
+    return i.length();
   }
 
   static isArray(obj) {
