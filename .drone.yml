@@ -5,7 +5,7 @@ name: default
 
 steps:
   - name: frontend
-    image: node:12.16.2-alpine3.11node
+    image: node
     commands:
       - yarn install
       - yarn test
